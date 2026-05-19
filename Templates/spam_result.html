@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Email Detection Result</h1>
+
+    {% if prediction == 'spam' or prediction == 'Spam' %}
+        <h2 class="spam">🚨 This Email is SPAM</h2>
+    {% else %}
+        <h2 class="ham">✅ This Email is HAM (Safe Email)</h2>
+    {% endif %}
+
+    <div class="result-box">
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+    </div>
+
+    <a href="/" class="back-btn">← Back to Home</a>
+</div>
+
+</body>
+</html>
